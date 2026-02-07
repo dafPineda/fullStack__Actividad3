@@ -1,4 +1,30 @@
 # fullStack__Actividad3
+-----------------------------------------------------------------------------------------------------
 Actividad 3 de la clase Full Stack
+🎯 Objetivo de la actividad
+Diseñar e implementar un backend con Express y POO que no solo haga CRUD, sino que aplique reglas de negocio reales, separando correctamente responsabilidades entre:
 
-![Prueba](https://th.bing.com/th/id/R.a37d4e387d6c3e56369bbc672093cdaf?rik=g6%2bP%2bVOIdk0dAw&riu=http%3a%2f%2f1.bp.blogspot.com%2f-wcefPkZBD0w%2fVAiJrd0geRI%2fAAAAAAAACQM%2f5FqWbRo8ZHI%2fs1600%2fnuevo.png&ehk=p3jOSARWw6HItuPeMoe7Uo5bHjY34q6YSQhtOcV4nPw%3d&risl=&pid=ImgRaw&r=0)
+* routes
+* controllers
+* repositories
+-----------------------------------------------------------------------------------------------------
+# Desarrollo
+En esta actividad se trabaja el proceso de solicitudes de pedidos, los cuales tienen como atributos: Id, nombre del producto, cantidad del producto y el estado.
+El proyecto tiene reglas claras: 
+- Los productos deben tener un stock mayor a 0. 
+- Todos los pedidos registrados deben ser inicializados con un estado "Pendiente" hasta que se modifique o elimine.
+- Los pedidos con un estado finalizado (cancelado o confirmado) no pueden volver a cambair de estado.
+- Los pedidos con un estado finalizado no pueden ser eliminados
+- Los pedidos al momento de modificarse, deben seguir respetando las reglas de negocio.
+
+El documento inicia en index donde se inicializa el servidor con express, el cual el primer (Y unico) listener llama a pedidos.routes.js el cual tiene todos los requests, cada uno llama una función que le toca respectivamente creando la conexión a la base de datos. Pasa por controllers donde todas las reglas se encuentran en ./src/controllers/pedidos.controllers.js donde tambien se incluyen reglas de logíca para evitar errores durante la compilación y con los request bien solicitados, acceden al repositorio de pedidos. Pedidos se encarga solo de entregar y recibir datos, teniendo como la función más llamada en controllers de getId para identificar la existencia de las busquedas por id o modificación por id.
+
+Se uso PostMan para hacer los requests a la página.
+
+Imagenes de PostMan:
+![creación correcta!](./images/validoPost.png)
+![intento de modificación inválida!](./images/putMalEstado.png)
+![intento de modificación valida !](./images/Captura%20de%20pantalla%202026-02-07%20023659.png)
+![intento de modificación valida 2!](./images/Captura%20de%20pantalla%202026-02-07%20023711.png)
+![intento de eliminación inválida por id](./images/Captura%20de%20pantalla%202026-02-07%20025119.png)
+![intento de eliminación inválida estado finalizado](./images/Captura%20de%20pantalla%202026-02-07%20025129.png)
