@@ -22,9 +22,15 @@ El documento inicia en index donde se inicializa el servidor con express, el cua
 Se uso PostMan para hacer los requests a la página.
 
 Imagenes de PostMan:
+- creación correcta
 ![creación correcta!](./images/validoPost.png)
+- intento de modificación inválida
 ![intento de modificación inválida!](./images/putMalEstado.png)
+- intento de modificación valida
 ![intento de modificación valida !](./images/Captura%20de%20pantalla%202026-02-07%20023659.png)
+- intento de modificación valida 2
 ![intento de modificación valida 2!](./images/Captura%20de%20pantalla%202026-02-07%20023711.png)
+- intento de eliminación inválida por id
 ![intento de eliminación inválida por id](./images/Captura%20de%20pantalla%202026-02-07%20025119.png)
+- intento de eliminación inválida estado finalizado
 ![intento de eliminación inválida estado finalizado](./images/Captura%20de%20pantalla%202026-02-07%20025129.png)
